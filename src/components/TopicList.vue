@@ -5,7 +5,7 @@
 <script lang="ts">
 import { computed, defineComponent } from "vue";
 import TopicItem from "./TopicItem.vue";
-import { topicList } from "./../dummyData";
+import { topicList } from "../dummyData";
 
 export default defineComponent({
   name: "TopicList",
