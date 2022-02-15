@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import TrackerContent from "../components/TrackerContent.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,6 +23,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/TrackerView.vue"),
   },
+  { path: "/tracker/:id", component: TrackerContent },
 ];
 
 const router = createRouter({

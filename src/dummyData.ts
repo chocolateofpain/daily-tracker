@@ -1,4 +1,9 @@
-export const topicList = [
+interface Topic {
+  id: number;
+  name: string;
+}
+
+export const topicList: Topic[] = [
   {
     id: 1,
     name: "Studies",

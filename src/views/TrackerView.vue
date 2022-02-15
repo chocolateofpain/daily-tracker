@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <TopicList />
+    <router-view />
   </div>
 </template>
 
