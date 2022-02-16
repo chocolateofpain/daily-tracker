@@ -9,7 +9,6 @@ export default createStore({
   },
   mutations: {
     changeCurrentTopic(state, topic) {
-      console.log("topic change");
       return (state.currentTopic = topic);
     },
   },
