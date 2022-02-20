@@ -8,8 +8,6 @@ import { computed, defineComponent, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 
-const fetchTopic = (id: string | string[]) => console.log(id);
-
 export default defineComponent({
   name: "TrackerContent",
   props: {
@@ -24,14 +22,20 @@ export default defineComponent({
     const name = computed(() => props.topic.name);
     const topic = ref();
 
-    const logActivity = () => store.dispatch("logActivity", name);
+    const logActivity = () => {
+      console.log("logging activity");
+      console.log(name);
+      store.dispatch("logActivity", name);
+    };
 
     watch(
       () => route.params.id,
       (newId) => {
         // topic.value = await fetchTopic(newId);
         console.log(newId);
-        topic.value = fetchTopic(newId);
+        topic.value = store.getters.getTopicsList.filter(
+          (topic: { id: string | string[] }) => topic.id === newId
+        );
       }
     );
 
