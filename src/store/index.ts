@@ -24,10 +24,11 @@ export default createStore({
     },
   },
   actions: {
-    async logActivity(data) {
+    async logActivity({ commit }, data) {
       const activityTime = Date.now();
       // PUT to backend
       console.log(data, activityTime);
+      commit("logActivity");
     },
   },
   modules: {},
